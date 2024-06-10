@@ -24,7 +24,7 @@
             var currentDate = new Date();
             var timeDiff = Math.abs(currentDate.getTime() - startDate.getTime());
             var daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
-            document.getElementById("counter").innerHTML = "EMF Day " + daysDiff;
+            document.getElementById("counter").innerHTML = "EMF24 Day " + daysDiff;
         }
 
         setInterval(updateCounter, 1000);
