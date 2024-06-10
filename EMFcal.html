@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EMF Counter</title>
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        #counter {
+            font-size: 24px;
+            margin-top: 100px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <script>
+        function updateCounter() {
+            var startDate = new Date("May 27, 2024");
+            var currentDate = new Date();
+            var timeDiff = Math.abs(currentDate.getTime() - startDate.getTime());
+            var daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+            document.getElementById("counter").innerHTML = "EMF Day " + daysDiff;
+        }
+
+        setInterval(updateCounter, 1000);
+    </script>
+</head>
+<body>
+    <h1>It is</h1> <p id="counter"></p>
+</body>
+</html>
