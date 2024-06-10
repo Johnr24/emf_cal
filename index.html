@@ -16,8 +16,8 @@
         #counter {
             font-size: 24px;
             margin-top: 100px;
-            opacity: 0;
-            transition: opacity 0.3s;
+            opacity: 0;  /* Start invisible */
+            transition: opacity 0.3s;  /* Transition to visible over 0.3 seconds */
         }
     </style>
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
@@ -27,7 +27,12 @@
             var currentDate = new Date();
             var timeDiff = Math.abs(currentDate.getTime() - startDate.getTime());
             var daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
-            document.getElementById("counter").innerHTML = "EMF24 Day " + daysDiff;
+            var counterElement = document.getElementById("counter");
+            counterElement.innerHTML = "EMF24 Day " + daysDiff;
+            counterElement.style.opacity = 1;  /* Make visible */
+            setTimeout(function() {
+                counterElement.style.opacity = 0;  /* Make invisible after 0.3 seconds */
+            }, 300);
         }
 
         setInterval(updateCounter, 1000);
