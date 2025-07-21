@@ -6,6 +6,7 @@
         body {
             font-family: 'Raleway', sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -13,19 +14,24 @@
             color:  #213018;
         }
 
-        #counter {
+        #counter, #future_counter {
             font-size: 24px;
-            margin-top: 100px;
+            margin-top: 20px;
         }
     </style>
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <script>
         function updateCounter() {
-            var startDate = new Date("July 16, 2026");
+            var startDate = new Date("May 30, 2024");
             var currentDate = new Date();
             var timeDiff = Math.abs(currentDate.getTime() - startDate.getTime());
             var daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
-            document.getElementById("counter").innerHTML = "EMF26 Day " + daysDiff;
+            document.getElementById("counter").innerHTML = "EMF24 Day " + daysDiff;
+
+            var futureDate = new Date("July 16, 2026");
+            var timeDiffFuture = currentDate.getTime() - futureDate.getTime();
+            var daysDiffFuture = Math.ceil(timeDiffFuture / (1000 * 3600 * 24));
+            document.getElementById("future_counter").innerHTML = "EMF26 Day " + daysDiffFuture;
         }
 
         setInterval(updateCounter, 1000);
@@ -33,5 +39,7 @@
 </head>
 <body>
     <h1>It is</h1> <p id="counter"></p>
+    or
+    <p id="future_counter"></p>
 </body>
 </html>
