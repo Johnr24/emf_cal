@@ -29,7 +29,7 @@
             document.getElementById("counter").innerHTML = "EMF24 Day " + daysDiff;
 
             var futureDate = new Date("July 16, 2026");
-            var timeDiffFuture = futureDate.getTime() - currentDate.getTime();
+            var timeDiffFuture = currentDate.getTime() - futureDate.getTime();
             var daysDiffFuture = Math.ceil(timeDiffFuture / (1000 * 3600 * 24));
             document.getElementById("future_counter").innerHTML = "EMF26 Day " + daysDiffFuture;
         }
